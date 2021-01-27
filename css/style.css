@@ -1,0 +1,45 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+/* Global Style */
+input::placeholder{
+    font-size: 14px;
+}
+/* Login Area */
+#loginArea{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+#loginArea #formSubmit, .transactionInput{
+    border-radius: 10px;
+    box-shadow: 5px 8px 20px gray;
+}
+
+/* Transaction Area */
+#transactionArea{
+    display: none;
+}
+#transactionArea h2{
+    font-size: 40px;
+}
+#transactionArea .deposit{
+background-color: #9ee493;
+}
+#transactionArea .withdraw{
+background-color: #ff6b6b;
+}
+#transactionArea .balance{
+background-color: #ffe66d;
+}
+#transactionArea .transactionItem{
+    border-radius: 10px;
+    padding: 20px;
+}
+.transactionItem h5, .transactionItem span{
+    font-size: 25px;
+    font-weight: bold;
+}

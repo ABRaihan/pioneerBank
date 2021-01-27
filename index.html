@@ -1,19 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pioneer Bank</title>
     <!-- Bootstrap CSS File -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Google Fonts CDN -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap" rel="stylesheet">
     <!-- Custom CSS File -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
+<body>
+    <!-- Login Area -->
+    <section id="loginArea" class="py-5">
+        <div class="container">
+            <h1 class="text-center mb-4">Welcome to Pioneer Bank</h1>
+            <!-- Submit Area -->
+            <form id="formSubmit" action="" class="p-5" autocomplete="on">
+                <h2>Login</h2>
+                <div class="col-12 mb-4">
+                    <input class="form-control" type="email" placeholder="Email" required>
+                </div>
+                <div class="col-12 mb-4">
+                    <input class="form-control" type="password" placeholder="Password" required>
+                </div>
+                <input type="submit" value="Enter" class="btn btn-success">
+            </form>
+        </div>
+    </section>
+    <!-- Transaction Area -->
+    <section id="transactionArea" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Transaction</h2>
+            <!-- Transaction Output -->
+            <div class="row px-5 text-center g-3">
+                <!-- Deposit Column -->
+                <div class="col-12 col-lg-4">
+                    <div class="deposit transactionItem">
+                        <h3>Deposit</h3>
+                        <h5>$ <span id="depositBalance">00</span></h5>
+                    </div>
+                </div>
+                <!-- Withdraw Column -->
+                <div class="col-12 col-lg-4">
+                    <div class="withdraw transactionItem">
+                        <h3>Withdraw</h3>
+                        <h5>$ <span id="withdrawBalance">00</span></h5>
+                    </div>
+                </div>
+                <!-- Balance Column -->
+                <div class="col-12 col-lg-4">
+                    <div class="balance transactionItem">
+                        <h3>Balance</h3>
+                        <h5>$ <span id="balance">1200</span></h5>
+                    </div>
+                </div>
+            </div>
+            <!-- Transaction Input -->
+            <div class="row p-3 mt-3 g-4">
+                <div class="col-12 col-lg-6">
+                    <div class="transactionInput p-5">
+                        <h3>Deposit</h3>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input id="depositAmount" class="form-control" type="number"
+                                placeholder="Enter deposit amount">
+                        </div>
+                        <button id="depositButton" class="btn btn-success mt-3" type="submit">Deposit</button>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="transactionInput p-5">
+                        <h3>Withdraw</h3>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input id="withdrawAmount" class="form-control" type="number"
+                                placeholder="Enter withdraw amount">
+                        </div>
+                        <button id="withdrawButton" class="btn btn-danger mt-3" type="submit">Withdraw</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Bootstrap JS File -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS File -->
     <script src="js/app.js"></script>
 </body>
+
 </html>

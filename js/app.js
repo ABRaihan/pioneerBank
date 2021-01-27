@@ -1,4 +1,26 @@
-const form = document.getElementById("formSubmit");
+// money transaction process
+function moneyTransaction(preBalID, resourceID, cb) {
+    const previousBalance = document.getElementById(preBalID);
+    const transactionAmount = document.getElementById(resourceID);
+    if (transactionAmount.value) {
+        previousBalance.innerText =
+            parseFloat(previousBalance.innerText) +
+            parseFloat(transactionAmount.value);
+        const totalBalance = document.getElementById("balance");
+        totalBalance.innerText = cb(
+            parseFloat(totalBalance.innerText),
+            parseFloat(transactionAmount.value)
+        );
+    }
+    transactionAmount.value = "";
+}
+// getting ID
+function getID(id) {
+    return document.getElementById(id);
+}
+
+/* ---------------> XX <---------------- */
+const form = getID("formSubmit");
 // transaction area showing and login area hidden event
 form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -6,8 +28,8 @@ form.addEventListener("submit", function (e) {
     document.getElementById("transactionArea").style.display = "block";
 });
 
-const depositButton = document.getElementById("depositButton");
-const withdrawButton = document.getElementById("withdrawButton");
+const depositButton = getID("depositButton");
+const withdrawButton = getID("withdrawButton");
 
 // deposit money
 depositButton.addEventListener("click", function (e) {
@@ -26,20 +48,3 @@ withdrawButton.addEventListener("click", function (e) {
         (prevAmount, newAmount) => prevAmount - newAmount
     );
 });
-
-// money transaction process
-function moneyTransaction(preBalID, resourceID, cb) {
-    const previousBalance = document.getElementById(preBalID);
-    const transactionAmount = document.getElementById(resourceID);
-    if (transactionAmount.value) {
-        previousBalance.innerText =
-            parseFloat(previousBalance.innerText) +
-            parseFloat(transactionAmount.value);
-        const totalBalance = document.getElementById("balance");
-        totalBalance.innerText = cb(
-            parseFloat(totalBalance.innerText),
-            parseFloat(transactionAmount.value)
-        );
-    }
-    transactionAmount.value = "";
-}
